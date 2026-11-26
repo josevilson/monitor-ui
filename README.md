@@ -58,19 +58,22 @@ src/
 │   │   └── TopNav.tsx               # Cabeçalho único: busca central, seletor PRD/HK/Todos, abas e tema
 │   ├── ui/
 │   │   ├── Badges.tsx               # EnvBadge (PRD/HK), JobStatusBadge e JobStatusDot
-│   │   └── DetailDrawer.tsx         # Drawer lateral deslizante reutilizável (progressive disclosure)
+│   │   ├── DetailDrawer.tsx         # Modal centralizado reutilizável (progressive disclosure)
+│   │   ├── InteractiveLineChart.tsx # Gráfico de linha SVG com tooltip detalhado no hover
+│   │   └── StatsControlsBar.tsx     # Período manual (De/Até), presets (Semana/Mês/Ano) e Gráfico/Tabela
 │   ├── jobs/
 │   │   ├── JobsTimelineView.tsx     # Matriz Control-M, agrupamentos, chips e filtros por coluna
 │   │   ├── ColumnFilterPopover.tsx  # Popover pesquisável/selecionável reutilizável (position: fixed)
-│   │   └── JobDetailDrawer.tsx      # Detalhes da execução Control-M (ODATE, dependência, sysout/log)
+│   │   └── JobDetailDrawer.tsx      # Modal Control-M (ODATE, log, estatísticas OK vs. Não OK)
 │   └── kafka/
 │       ├── VolumetryMatrixView.tsx  # Matriz 2 linhas por par (Kafdrop acima, Databricks abaixo) + Acumulado
-│       └── VolumetryDetailDrawer.tsx# Gráfico comparativo do período, Schema Drift e jobs vinculados
+│       └── VolumetryDetailDrawer.tsx# Modal Kafdrop → Databricks (Schema Drift, Volumetria e Snapshots)
 ├── data/
 │   ├── mock-controlm.ts             # Massa mockada Control-M (PRD, HK e compartilhados)
 │   └── mock-kafka-databricks.ts     # Massa mockada Kafdrop → Databricks (14 dias, PRD e HK)
 ├── lib/
-│   └── format.ts                    # Formatadores de data curta, números compactos/completos e duração
+│   ├── format.ts                    # Formatadores de data curta, números compactos/completos e duração
+│   └── stats-history.ts             # Geradores de fallback (30d/12m e snapshots) para os modais
 └── types/
     └── monitoring.ts                # Contratos TypeScript atuais do MVP (ponto de partida para integração)
 ```

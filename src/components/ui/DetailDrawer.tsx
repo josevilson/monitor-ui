@@ -48,7 +48,7 @@ export function DetailDrawer({
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="relative z-10 flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl"
+        className="relative z-10 flex max-h-[88vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl"
       >
         <div className="flex items-center justify-between gap-3 border-b border-border px-6 py-4">
           <div className="min-w-0">
